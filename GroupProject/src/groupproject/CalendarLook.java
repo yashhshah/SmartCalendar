@@ -22,9 +22,10 @@ public class CalendarLook extends javax.swing.JFrame {
 
    //declare variables 
     ArrayList <String> names = new ArrayList<String>();
-    public CalendarLook() {
-        String[] finalDates  = calcDate();
+    public CalendarLook(int month, int year) {
+        String[] finalDates  = calcDate(month, year);
         initComponents(finalDates);
+        this.setVisible(true);
     }
 
     /**
@@ -417,22 +418,29 @@ public class CalendarLook extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private String[] calcDate(){
+    private String[] calcDate(int m, int y){
         
         //get current year
          LocalDate localDate = LocalDate.now();
          
          //year code
-        int year = localDate.getYear();
-        System.out.println(year);
+        //int year = localDate.getYear();
+        int year = y;
+        
         int tempYear = Integer.valueOf(String.valueOf(year).substring(2));
         int yearCode = (tempYear + (tempYear/4)) % 7;
         
+        
+        
         //month code
         int monthCodes[] = new int[]{0,3,3,6,1,4,6,2,5,0,3,5};
+        /*
         LocalDate localMonth = LocalDate.now();
         int month = localMonth.getMonthValue();
         int monthCode = monthCodes[month-1]; 
+        */
+        int month = m;
+        int monthCode = monthCodes[m];
         
         
         //Century Code
@@ -524,7 +532,7 @@ public class CalendarLook extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CalendarLook().setVisible(true);
+                //new CalendarLook().setVisible(true);
             }
         });
     }
