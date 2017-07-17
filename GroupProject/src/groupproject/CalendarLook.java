@@ -3,6 +3,9 @@ package GroupProject;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import javax.swing.border.Border;
 
 /*
@@ -17,11 +20,11 @@ import javax.swing.border.Border;
  */
 public class CalendarLook extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CalendarLook
-     */
+   //declare variables 
+    ArrayList <String> names = new ArrayList<String>();
     public CalendarLook() {
-        initComponents();
+        String[] finalDates  = calcDate();
+        initComponents(finalDates);
     }
 
     /**
@@ -31,7 +34,7 @@ public class CalendarLook extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(String[] fD) {
 
         jColorChooser1 = new javax.swing.JColorChooser();
         jButton1 = new javax.swing.JButton();
@@ -72,7 +75,7 @@ public class CalendarLook extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
+        jButton1.setText(fD[0]);
         jButton1.setBackground(new Color(192, 192, 192));
         jButton1.setForeground(Color.BLACK);
         jButton1.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -83,7 +86,7 @@ public class CalendarLook extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
+        jButton2.setText(fD[1]);
         jButton2.setBackground(new Color(192, 192, 192));
         jButton2.setForeground(Color.BLACK);
         jButton2.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -94,25 +97,25 @@ public class CalendarLook extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("jButton3");
+        jButton3.setText(fD[2]);
         jButton3.setBackground(new Color(192, 192, 192));
         jButton3.setForeground(Color.BLACK);
         jButton3.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton3.setBorder(null);
 
-        jButton4.setText("jButton4");
+        jButton4.setText(fD[3]);
         jButton4.setBackground(new Color(192, 192, 192));
         jButton4.setForeground(Color.BLACK);
         jButton4.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton4.setBorder(null);
 
-        jButton5.setText("jButton5");
+        jButton5.setText(fD[4]);
         jButton5.setBackground(new Color(192, 192, 192));
         jButton5.setForeground(Color.BLACK);
         jButton5.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton5.setBorder(null);
 
-        jButton6.setText("jButton6");
+        jButton6.setText(fD[5]);
         jButton6.setBackground(new Color(192, 192, 192));
         jButton6.setForeground(Color.BLACK);
         jButton6.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -123,7 +126,7 @@ public class CalendarLook extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("jButton7");
+        jButton7.setText(fD[6]);
         jButton7.setBackground(new Color(192, 192, 192));
         jButton7.setForeground(Color.BLACK);
         jButton7.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -134,49 +137,49 @@ public class CalendarLook extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("jButton8");
+        jButton8.setText(fD[7]);
         jButton8.setBackground(new Color(192, 192, 192));
         jButton8.setForeground(Color.BLACK);
         jButton8.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton8.setBorder(null);
 
-        jButton9.setText("jButton9");
+        jButton9.setText(fD[8]);
         jButton9.setBackground(new Color(192, 192, 192));
         jButton9.setForeground(Color.BLACK);
         jButton9.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton9.setBorder(null);
 
-        jButton10.setText("jButton10");
+        jButton10.setText(fD[9]);
         jButton10.setBackground(new Color(192, 192, 192));
         jButton10.setForeground(Color.BLACK);
         jButton10.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton10.setBorder(null);
 
-        jButton11.setText("jButton11");
+        jButton11.setText(fD[10]);
         jButton11.setBackground(new Color(192, 192, 192));
         jButton11.setForeground(Color.BLACK);
         jButton11.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton11.setBorder(null);
 
-        jButton12.setText("jButton12");
+        jButton12.setText(fD[11]);
         jButton12.setBackground(new Color(192, 192, 192));
         jButton12.setForeground(Color.BLACK);
         jButton12.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton12.setBorder(null);
 
-        jButton13.setText("jButton13");
+        jButton13.setText(fD[12]);
         jButton13.setBackground(new Color(192, 192, 192));
         jButton13.setForeground(Color.BLACK);
         jButton13.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton13.setBorder(null);
 
-        jButton14.setText("jButton14");
+        jButton14.setText(fD[13]);
         jButton14.setBackground(new Color(192, 192, 192));
         jButton14.setForeground(Color.BLACK);
         jButton14.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton14.setBorder(null);
 
-        jButton15.setText("jButton15");
+        jButton15.setText(fD[14]);
         jButton15.setBackground(new Color(192, 192, 192));
         jButton15.setForeground(Color.BLACK);
         jButton15.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -187,79 +190,79 @@ public class CalendarLook extends javax.swing.JFrame {
             }
         });
 
-        jButton16.setText("jButton16");
+        jButton16.setText(fD[15]);
         jButton16.setBackground(new Color(192, 192, 192));
         jButton16.setForeground(Color.BLACK);
         jButton16.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton16.setBorder(null);
 
-        jButton17.setText("jButton17");
+        jButton17.setText(fD[16]);
         jButton17.setBackground(new Color(192, 192, 192));
         jButton17.setForeground(Color.BLACK);
         jButton17.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton17.setBorder(null);
 
-        jButton18.setText("jButton18");
+        jButton18.setText(fD[17]);
         jButton18.setBackground(new Color(192, 192, 192));
         jButton18.setForeground(Color.BLACK);
         jButton18.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton18.setBorder(null);
 
-        jButton19.setText("jButton19");
+        jButton19.setText(fD[18]);
         jButton19.setBackground(new Color(192, 192, 192));
         jButton19.setForeground(Color.BLACK);
         jButton19.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton19.setBorder(null);
 
-        jButton20.setText("jButton20");
+        jButton20.setText(fD[19]);
         jButton20.setBackground(new Color(192, 192, 192));
         jButton20.setForeground(Color.BLACK);
         jButton20.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton20.setBorder(null);
 
-        jButton21.setText("jButton21");
+        jButton21.setText(fD[20]);
         jButton21.setBackground(new Color(192, 192, 192));
         jButton21.setForeground(Color.BLACK);
         jButton21.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton21.setBorder(null);
 
-        jButton22.setText("jButton22");
+        jButton22.setText(fD[21]);
         jButton22.setBackground(new Color(192, 192, 192));
         jButton22.setForeground(Color.BLACK);
         jButton22.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton22.setBorder(null);
 
-        jButton23.setText("jButton23");
+        jButton23.setText(fD[22]);
         jButton23.setBackground(new Color(192, 192, 192));
         jButton23.setForeground(Color.BLACK);
         jButton23.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton23.setBorder(null);
 
-        jButton24.setText("jButton24");
+        jButton24.setText(fD[23]);
         jButton24.setBackground(new Color(192, 192, 192));
         jButton24.setForeground(Color.BLACK);
         jButton24.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton24.setBorder(null);
 
-        jButton25.setText("jButton25");
+        jButton25.setText(fD[24]);
         jButton25.setBackground(new Color(192, 192, 192));
         jButton25.setForeground(Color.BLACK);
         jButton25.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton25.setBorder(null);
 
-        jButton26.setText("jButton26");
+        jButton26.setText(fD[25]);
         jButton26.setBackground(new Color(192, 192, 192));
         jButton26.setForeground(Color.BLACK);
         jButton26.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton26.setBorder(null);
 
-        jButton27.setText("jButton27");
+        jButton27.setText(fD[26]);
         jButton27.setBackground(new Color(192, 192, 192));
         jButton27.setForeground(Color.BLACK);
         jButton27.setFont(new Font("Tahoma", Font.BOLD, 12));
         jButton27.setBorder(null);
 
-        jButton28.setText("jButton28");
+        jButton28.setText(fD[27]);
         jButton28.setBackground(new Color(192, 192, 192));
         jButton28.setForeground(Color.BLACK);
         jButton28.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -413,6 +416,61 @@ public class CalendarLook extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private String[] calcDate(){
+        
+        //get current year
+         LocalDate localDate = LocalDate.now();
+         
+         //year code
+        int year = localDate.getYear();
+        System.out.println(year);
+        int tempYear = Integer.valueOf(String.valueOf(year).substring(2));
+        int yearCode = (tempYear + (tempYear/4)) % 7;
+        
+        //month code
+        int monthCodes[] = new int[]{0,3,3,6,1,4,6,2,5,0,3,5};
+        LocalDate localMonth = LocalDate.now();
+        int month = localMonth.getMonthValue();
+        int monthCode = monthCodes[month-1]; 
+        
+        
+        //Century Code
+        int centuryCode = 6; 
+        
+        //Leap Year 
+        int leapCode = 0;
+        if((month==1 || month==2)&&year%4==0){
+            leapCode = 1;   
+        }
+        
+        //formula for calulating the day 
+        //(Year Code + Month Code + Century Code + Date Number – Leap Year Code) mod 7
+        
+        int day = (yearCode + monthCode + centuryCode + 1 - leapCode)%7;
+        
+        String[] finalDates = new String[31]; 
+        int counter = 0;
+        for(int i = 0; i<31; i++){
+            
+            if(i==day-1){
+                counter = 1;
+                
+            }
+            else if(i>day-1){
+                counter++;
+            }
+            if(counter==0){
+                finalDates[i] = "";
+            }
+            else{
+            finalDates[i] = String.valueOf(counter);
+            }
+        
+        }   
+        return finalDates;
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
