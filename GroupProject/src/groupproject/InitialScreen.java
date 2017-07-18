@@ -132,6 +132,9 @@ public class InitialScreen extends javax.swing.JFrame {
             String yString = (String) jComboBox2.getSelectedItem(); 
             int year = Integer.valueOf(yString);
             
+            CalendarLooknew s = new CalendarLooknew(monthIndex, year);
+            s.setVisible(true);
+            
             
         
     }//GEN-LAST:event_jButton1ActionPerformed

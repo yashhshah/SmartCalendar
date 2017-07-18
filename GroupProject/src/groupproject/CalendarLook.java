@@ -23,8 +23,8 @@ public class CalendarLook extends javax.swing.JFrame {
    //declare variables 
     ArrayList <String> names = new ArrayList<String>();
     public CalendarLook(int month, int year) {
-        String[] finalDates  = calcDate(month, year);
-        initComponents(finalDates);
+       
+        
         this.setVisible(true);
     }
 
@@ -418,66 +418,6 @@ public class CalendarLook extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private String[] calcDate(int m, int y){
-        
-        //get current year
-         LocalDate localDate = LocalDate.now();
-         
-         //year code
-        //int year = localDate.getYear();
-        int year = y;
-        
-        int tempYear = Integer.valueOf(String.valueOf(year).substring(2));
-        int yearCode = (tempYear + (tempYear/4)) % 7;
-        
-        
-        
-        //month code
-        int monthCodes[] = new int[]{0,3,3,6,1,4,6,2,5,0,3,5};
-        /*
-        LocalDate localMonth = LocalDate.now();
-        int month = localMonth.getMonthValue();
-        int monthCode = monthCodes[month-1]; 
-        */
-        int month = m;
-        int monthCode = monthCodes[m];
-        
-        
-        //Century Code
-        int centuryCode = 6; 
-        
-        //Leap Year 
-        int leapCode = 0;
-        if((month==1 || month==2)&&year%4==0){
-            leapCode = 1;   
-        }
-        
-        //formula for calulating the day 
-        //(Year Code + Month Code + Century Code + Date Number – Leap Year Code) mod 7
-        
-        int day = (yearCode + monthCode + centuryCode + 1 - leapCode)%7;
-        
-        String[] finalDates = new String[31]; 
-        int counter = 0;
-        for(int i = 0; i<31; i++){
-            
-            if(i==day-1){
-                counter = 1;
-                
-            }
-            else if(i>day-1){
-                counter++;
-            }
-            if(counter==0){
-                finalDates[i] = "";
-            }
-            else{
-            finalDates[i] = String.valueOf(counter);
-            }
-        
-        }   
-        return finalDates;
-    }
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
