@@ -615,12 +615,14 @@ private String[] calcDate(int m, int y){
                 
                 
             }
-            else if(i>day-1 && counter<=limit){
+            else if(i>day-1 && counter<limit && once==false){
                 counter++;
             }
-            else if(counter>limit){
+            else if(counter>=limit){
                 counter=0;
+                once = true;
             }
+            System.out.println(counter);
             if(counter==0){
                 finalDates[i] = "";
             }
